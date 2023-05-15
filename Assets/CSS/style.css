@@ -1,0 +1,112 @@
+/* Importation de font */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&family=Space+Grotesk:wght@400;700&display=swap');
+
+
+/* Variable des couleurs */
+:root {
+    --jaune: #ffff00;
+    --jaune-clair: #f8f184;
+    --bleu: #19587D;
+    --rouge: #B11313;
+    --gris-dark: #0D0E09;
+    --gris: #C4C4C4;
+    --gris-border: #BCBBBD;
+    --noir: #000000;
+    --blanc: #ffffff;
+    --degbleu: linear-gradient(90deg, rgba(237,222,191,1) 0%, rgba(25,88,125,1) 40%);
+    --degrouge: linear-gradient(90deg, rgba(237,222,191,1) 0%,rgba(137,0,8,1) 60%);    
+}
+
+/* Annulation de toutes les marges */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--noir);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    color: var(--blanc);
+}
+
+/* Design en general */
+
+h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+}
+
+h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.btn {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;    
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--blanc);
+}
+
+
+/* Design header & nav */
+header {
+    background-image: url(../Illustrations/Bathome1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 102px;
+    padding: 50px 90px 132px;
+    border-right: 2px solid var(--gris-border);
+    border-bottom: 2px solid var(--gris-border);
+    border-left: 2px solid var(--gris-border); 
+}
+
+.menu a {
+    font-weight: bold;
+    border-bottom: 1px solid var(--blanc);
+    padding: 0px 2px;
+    animation: .5s;
+}
+
+.menu a:hover {
+    color: var(--jaune);
+    border-bottom: 1px solid var(--jaune);
+}
+
+/* Design section intro */
+.intro {
+    margin: 0 102px;
+    padding: 200px 0px;
+    border-right: 2px solid var(--gris-border);
+    border-left: 2px solid var(--gris-border);  
+    text-align: center;   
+}
+
+.btn-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
