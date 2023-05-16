@@ -7,14 +7,17 @@
     --jaune: #ffff00;
     --jaune-clair: #f8f184;
     --bleu: #19587D;
+    --bleu-dark: #051319;
     --rouge: #B11313;
     --gris-dark: #0D0E09;
     --gris: #C4C4C4;
-    --gris-border: #BCBBBD;
+    --gris-border: #bcbbbda0;
     --noir: #000000;
     --blanc: #ffffff;
-    --degbleu: linear-gradient(90deg, rgba(237,222,191,1) 0%, rgba(25,88,125,1) 40%);
-    --degrouge: linear-gradient(90deg, rgba(237,222,191,1) 0%,rgba(137,0,8,1) 60%);    
+    --degbleu: linear-gradient(170deg, rgba(237,222,191,0.2) 0%, rgba(25,88,125,0.2) 40%);
+    --degbleu-btn: linear-gradient(90deg, rgba(237,222,191,0.7) 0%, rgba(25,88,125,0.7) 100%);
+    --degrouge: linear-gradient(90deg, rgba(237,222,191,0.7) 0%,rgba(137,0,8,0.7) 60%);
+    --hdegrouge: linear-gradient(90deg, rgba(237,222,191,0.9) 0%,rgba(137,0,8,0.9) 100%);    
 }
 
 /* Annulation de toutes les marges */
@@ -34,25 +37,10 @@ body {
 /* Design en general */
 
 h1 {
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
     font-size: 36px;
-}
-
-h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 22px;
-}
-
-h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: bold;
-    font-size: 12px;
-}
-
-.btn {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 20px;    
+    margin: 20px 0px 40px;
 }
 
 li {
@@ -67,13 +55,13 @@ a {
 
 
 /* Design header & nav */
-header {
+.header {
     background-image: url(../Illustrations/Bathome1.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
-nav {
+.navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -88,7 +76,7 @@ nav {
     font-weight: bold;
     border-bottom: 1px solid var(--blanc);
     padding: 0px 2px;
-    animation: .5s;
+    transition: .5s;
 }
 
 .menu a:hover {
@@ -102,7 +90,20 @@ nav {
     padding: 200px 0px;
     border-right: 2px solid var(--gris-border);
     border-left: 2px solid var(--gris-border);  
-    text-align: center;   
+    text-align: center;
+    position: relative;
+    max-width: 100%;   
+}
+
+.nav-social {
+    position: fixed;
+    right: 50px;
+    top: 50%;
+    z-index: 100;
+}
+
+.social-media, .space-media {
+    margin: 25px 0px;
 }
 
 .btn-intro {
@@ -110,3 +111,334 @@ nav {
     align-items: center;
     justify-content: center;
 }
+
+.btn a, button {
+    border: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;  
+    color: var(--blanc);
+    background: var(--degrouge);
+    padding: 15px 40px;
+    margin: 0px 20px;
+}
+
+.btn a:hover, button:hover {
+    background: var(--hdegrouge);
+}
+
+.down {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Design Batman Card */
+
+.batman-cinema, .batman-nemesis, .batman-allies, .batman-multimedia {
+    margin: 0 102px;
+    padding: 50px 90px 132px;
+    border-right: 2px solid var(--gris-border);
+    border-left: 2px solid var(--gris-border);
+}
+
+.text-container {
+    text-align: justify;
+    width: 90%;
+    margin-bottom: 70px;
+}
+
+.text-container h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.batman-card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-title h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Design Batman nemesis */
+.batman-nemesis {
+    position: relative;
+    max-width: 100%;
+}
+
+.batman-nemesis .bat-left {
+    position: absolute;
+    top: -40px;
+    left: 100px;
+}
+
+.bat-left img {
+    max-width: 150px;
+}
+/* Design Batman alliés */
+.batman-allies {
+    position: relative;
+    max-width: 100%;
+}
+
+.batman-allies .bat-right {
+    position: absolute;
+    top: -235px;
+    right: -102px;
+}
+
+
+/* Design Justice League */
+.justice-container {
+    margin: 0 102px;
+    padding: 0px 90px 50px;
+    border-right: 2px solid var(--gris-border);
+    border-left: 2px solid var(--gris-border);
+}
+
+.justice-container .text-container {
+    margin: 0 auto;
+}
+
+/* Design Batman Multimédia */
+.batman-multimedia {
+    padding-top: 50px;
+}
+
+.media-slider {
+    display: flex;
+    justify-content: space-between;    
+    align-items: center;
+    margin-bottom: 132px;
+}
+
+
+.slider-items {
+    width: 50%;
+    display: flex;
+}
+
+.synopsis-film {
+    background: var(--degbleu);
+    padding: 20px 15px;
+    border: 1px solid var(--gris-border);
+    border-left: none;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.synopsis-film h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.synopsis-film h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 10px 0px;
+}
+
+.synopsis-film h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.jaune {
+    color: var(--jaune) ;
+}
+
+.synopsis-film p {
+    font-size: 12px;
+}
+
+/* Design Batman Contact */
+.batman-contact {
+    background: var(--degbleu);
+    border-top: 1px solid var(--gris-border);
+    border-bottom: 1px solid var(--gris-border);
+}
+
+.title-contact h2 {
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 22px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+
+.batman-contact form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.batman-contact .placeholder, .batman-contact::placeholder  {
+    width: 100%;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    color: var(--blanc);
+    border-color: transparent;
+    border-bottom: 1px solid var(--gris-border) ;
+    background: none;
+    margin: 20px 0px;
+}
+
+.news-container {
+    font-size: 14px;
+    width: 70%;
+    display: inline-block;
+}
+
+.news-container input {
+    position: relative;
+    bottom: -3px;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    margin-left: 5px;
+}
+
+.batman-contact fieldset {
+    border:none;
+    margin-bottom: 50px;
+}
+
+.batman-contact textarea {
+    height: 20px;
+}
+
+.btn-send{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.btn-send button{
+    padding: 15px 60px;
+}
+
+.radio-check {
+    display: flex;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.radio-check .choix {
+    position: relative;
+    background: var(--degbleu-btn);
+    margin: 0px 25px;
+    padding: 10px 2px;
+    
+}
+
+.choix input {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;    
+}
+
+.choix label {
+    background: var(--bleu-dark);
+    padding: 9px 24px 8px;
+}
+
+/* Design réplique */
+.batman-replique {
+    margin: 0 102px;
+    padding: 0px 90px 50px;
+    border-right: 2px solid var(--gris-border);
+    border-left: 2px solid var(--gris-border);
+}
+
+.batman-replique h2 {
+    opacity: 0;
+}
+
+.gui-B {
+    display: flex;
+    align-items: end;
+}
+
+.replique-container {
+    width: 90%;
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.replique {
+    width: 40%;
+    padding: 150px 0px;
+}
+
+.replique figcaption {
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.8em;
+}
+
+.replique cite {
+    font-style: normal;
+}
+
+
+/* Design footer */
+footer {
+    margin: 0 102px;
+    padding: 0px 90px 100px 90px;
+    border-right: 2px solid var(--gris-border);
+    border-left: 2px solid var(--gris-border);    
+}
+
+footer .credit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.credit .logo-w {
+    margin-right: 7px;
+}
+
+footer .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo .feat {
+    margin: 0 7px;
+}
+
+.logo .social {
+    margin-left: 30px;
+}
+
+
