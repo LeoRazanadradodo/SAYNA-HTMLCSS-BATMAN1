@@ -11,13 +11,15 @@
     --rouge: #B11313;
     --gris-dark: #0D0E09;
     --gris: #C4C4C4;
-    --gris-border: #bcbbbda0;
+    --gris-border: rgba(188, 187, 189, 0.3);
     --noir: #000000;
     --blanc: #ffffff;
+    --blanc-st: rgba(255, 255, 255, 0.4);
     --degbleu: linear-gradient(170deg, rgba(237,222,191,0.2) 0%, rgba(25,88,125,0.2) 40%);
-    --degbleu-btn: linear-gradient(90deg, rgba(237,222,191,0.7) 0%, rgba(25,88,125,0.7) 100%);
+    --degbleu-btn: linear-gradient(to right, rgba(237, 222, 191, 0.5), hwb(202 10% 51% / 0.5)) 1;
+    --degbleu-btn-hover: linear-gradient(to right, rgba(237, 222, 191, 1), hwb(202 10% 51% / 1)) 1;
     --degrouge: linear-gradient(90deg, rgba(237,222,191,0.7) 0%,rgba(137,0,8,0.7) 60%);
-    --hdegrouge: linear-gradient(90deg, rgba(237,222,191,0.9) 0%,rgba(137,0,8,0.9) 100%);    
+    --hdegrouge: linear-gradient(90deg, rgb(237, 222, 191) 0%,rgba(137,0,8,0.9) 100%);    
 }
 
 /* Annulation de toutes les marges */
@@ -34,15 +36,14 @@ body {
     color: var(--blanc);
 }
 
-/* Design en general */
-
-h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 500;
-    font-size: 36px;
-    margin: 20px 0px 40px;
+/* Resposive body */
+@media only screen and (max-width: 992px) {
+    body {
+        font-size: 100%;
+    }
 }
 
+/* Design en general */
 li {
     list-style-type: none;
 }
@@ -54,11 +55,20 @@ a {
 }
 
 
+/* Hover yellow img */
+.hover img {
+    transition: .5s;
+}
+
+.hover img:hover  {
+    opacity: 0;
+}
+
 /* Design header & nav */
 .header {
     background-image: url(../Illustrations/Bathome1.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 
 .navbar {
@@ -70,6 +80,13 @@ a {
     border-right: 2px solid var(--gris-border);
     border-bottom: 2px solid var(--gris-border);
     border-left: 2px solid var(--gris-border); 
+}
+
+.logo-bat {
+    background-image: url(../Logos/logohome-hover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
 }
 
 .menu a {
@@ -87,7 +104,7 @@ a {
 /* Design section intro */
 .intro {
     margin: 0 102px;
-    padding: 200px 0px;
+    padding: 200px 0px 350px;
     border-right: 2px solid var(--gris-border);
     border-left: 2px solid var(--gris-border);  
     text-align: center;
@@ -96,14 +113,56 @@ a {
 }
 
 .nav-social {
+    text-align: center;
     position: fixed;
     right: 50px;
     top: 50%;
     z-index: 100;
 }
 
+h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    margin: 20px 0px 40px;
+}
+
+/* Social media nav fixed */
 .social-media, .space-media {
     margin: 25px 0px;
+}
+
+.arrow-top {
+    background: url(../Logos/logo_bat_flèche--hover.png) no-repeat;
+    background-size: contain;
+}
+
+.arrow-down {
+    background: url(../Logos/logo_bat_flèche_2-hover.png) no-repeat;
+    background-size: contain;
+}
+
+
+.social-media a {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0 auto;
+}
+
+.f-fb, .fb a {
+    background: url(../Logos/icon_facebook--hover.png) no-repeat;
+    background-size: contain;
+}
+
+.f-ig, .ig a {
+    background: url(../Logos/icon_ig--hover.png) no-repeat;
+    background-size: contain;
+}
+
+.f-tw, .tw a {
+    background: url(../Logos/icon_tw--hover.png) no-repeat;
+    background-size: contain;
 }
 
 .btn-intro {
@@ -134,6 +193,58 @@ a {
     right: 0;
 }
 
+.down a {
+    background: url(../Logos/flèche_down_header-hover.png) no-repeat;
+    background-size: contain;
+    display: block;
+    width: 74px;
+    height: 43px;
+    margin: 0 auto;
+}
+
+/* Responsive header */
+@media only screen and (max-width: 992px) {
+    .navbar {
+        margin: 0 5%;
+        padding: 25px 0px 0px;
+        max-width: 100%;
+        border: none;   
+    }
+    
+    .logo-bat {
+        scale: 70%;
+    }
+    
+    .menu a {
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+    .intro {
+        margin: 0 5%;
+        padding: 50px 0px 100px;
+        max-width: 100%;
+        border: none;
+        font-size: .7em;   
+    }
+    
+    .nav-social {
+        display: none;
+    }
+
+    .btn a, button {
+        font-size: 1em;
+        padding: 10px 25px;
+        margin: 0px 10px;
+    }
+
+    .down {
+        scale: 50%;
+    }
+}
+
 /* Design Batman Card */
 
 .batman-cinema, .batman-nemesis, .batman-allies, .batman-multimedia {
@@ -158,6 +269,19 @@ a {
 .batman-card {
     display: flex;
     justify-content: space-between;
+}
+
+.card-items {
+    transition: .5s;
+    scale: 1;
+}
+
+.card-items:hover {
+    scale: 1.15;
+}
+
+.card-items img {
+    width: 100%;
 }
 
 .card-title h3 {
@@ -194,7 +318,6 @@ a {
     right: -102px;
 }
 
-
 /* Design Justice League */
 .justice-container {
     margin: 0 102px;
@@ -205,6 +328,10 @@ a {
 
 .justice-container .text-container {
     margin: 0 auto;
+}
+
+.justice-banner img {
+    width: 100%;
 }
 
 /* Design Batman Multimédia */
@@ -263,6 +390,16 @@ a {
     font-size: 12px;
 }
 
+.player-ba img {
+    width: 100%;
+    transition: .5s;
+}
+
+.player-ba img:hover {
+    box-shadow: 0px 0px 40px var(--blanc-st);
+}
+
+
 /* Design Batman Contact */
 .batman-contact {
     background: var(--degbleu);
@@ -306,9 +443,10 @@ a {
     bottom: -3px;
     height: 15px;
     width: 15px;
-    background-color: #eee;
+    background-color: var(--blanc);
     margin-left: 5px;
 }
+
 
 .batman-contact fieldset {
     border:none;
@@ -328,6 +466,7 @@ a {
 
 .btn-send button{
     padding: 15px 60px;
+    cursor: pointer;
 }
 
 .radio-check {
@@ -342,10 +481,16 @@ a {
 
 .radio-check .choix {
     position: relative;
-    background: var(--degbleu-btn);
     margin: 0px 25px;
-    padding: 10px 2px;
-    
+    padding: 9px 24px 8px;
+    border-width: 2px;
+    border-style: solid;
+    border-image: var(--degbleu-btn);
+    transition: .5s;  
+}
+
+.radio-check .choix:hover {
+    border-image: var(--degbleu-btn-hover);  
 }
 
 .choix input {
@@ -356,11 +501,6 @@ a {
     bottom: 0;
     right: 0;
     opacity: 0;    
-}
-
-.choix label {
-    background: var(--bleu-dark);
-    padding: 9px 24px 8px;
 }
 
 /* Design réplique */
@@ -406,6 +546,115 @@ a {
     font-style: normal;
 }
 
+/* Responsive main */
+@media only screen and (max-width: 992px) {
+    .batman-cinema, .batman-nemesis, .batman-allies, .batman-multimedia, .justice-container, .batman-replique {
+        margin: 0 5%;
+        padding: 50px 0px 0px;
+        max-width: 100%;
+        border: none;
+        font-size: .7em; 
+    }
+
+    .text-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .text-container h2 {
+        font-size: 1.4em;
+    }
+    
+    .batman-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-items {
+        scale: 90%;
+    }
+
+    .card-items:hover {
+        scale: 90%;
+    }
+
+    .card-title h3 {
+        font-size: 1.3em;
+    }
+
+    .bat-left, .bat-right {
+        display: none;
+    }
+
+    .justice-banner {
+        margin-top: 25px;
+    }
+
+    /* Multimedia */
+    
+    .media-slider {
+        margin-bottom: 50px;
+    }
+    .arrow-left, .arrow-right {
+        scale: 50%;
+    }
+
+    .slider-items {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .synopsis-film {
+        background: var(--degbleu);
+        border: 1px solid var(--gris-border);
+        border-radius: 10px;
+    }
+   
+    .player-ba {
+        margin-bottom: 50px;
+    }
+
+    .player-ba img:hover {
+        box-shadow: none;
+    }
+
+    .radio-check .choix {
+        margin: 0px 7px;
+        padding: 9px 10px 8px;
+    }
+
+    .news-container {
+        width: 100%;
+    }
+
+    /* Replique */
+    .gui-B, .gui-A {
+        scale: 50%;
+    }
+    
+    .replique-container {
+        width: 90%;
+        margin: 0px auto;       
+        padding-bottom: 50px;
+    }
+    .batman-replique .text-container {
+        display: none;
+    }
+    .replique {
+        width: 80%;
+        padding: 100px 0px;
+    }
+    
+    .replique figcaption {
+        margin-top: 15px;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 1.8em;
+    }
+}
 
 /* Design footer */
 footer {
@@ -425,6 +674,8 @@ footer .credit {
 
 .credit .logo-w {
     margin-right: 7px;
+    background: url(../Logos/icon_WB--hover.png) no-repeat;
+    background-size: contain;
 }
 
 footer .logo {
@@ -441,4 +692,39 @@ footer .logo {
     margin-left: 30px;
 }
 
+.sayna {
+    background: url(../Logos/logo_sayna_white-hover.png) no-repeat;
+    background-size: contain;
+}
 
+.dc {
+    background: url(../Logos/icon_DC--hover.png) no-repeat;
+    background-size: contain;
+}
+
+/* Responsive footer */
+@media only screen and (max-width: 992px) {
+   footer {
+        margin: 0 5% 50px;
+        padding: 50px 0px 0px;
+        max-width: 100%;
+        border: none;
+        font-size: .7em;
+        text-align: center;
+    }
+
+    footer .credit {
+        flex-direction: column;
+        width: 50%;
+        margin: 0 auto 50px;
+    }
+
+    footer a {
+        background: none !important;
+        scale: 50%;
+    }
+
+    footer img:hover {
+        opacity: 1 !important;
+    }
+}
